@@ -15,7 +15,7 @@
     <a-scene mindar-image="imageTargetSrc: https://gabo-p.github.io/AR-test/target.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true">
         <a-assets timeout="100000">
           <!-- <a-asset-item id="bearModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/examples/image-tracking/assets/band-example/bear/scene.gltf"></a-asset-item> -->
-          <a-asset-item controls autoplay id="bearModel" src="https://gabo-p.github.io/AR-test/prueba.mp4" crossorigin="anonymous"></a-asset-item>
+          <a-asset-item id="bearModel" autoplay src="https://gabo-p.github.io/AR-test/prueba.mp4" crossorigin="anonymous"></a-asset-item>
           <!-- <video width="400" controls autoplay id="bearModel" src="https://gabo-p.github.io/AR-test/prueba.mp4" crossorigin="anonymous"></video> -->
           <!-- <a-asset-item id="raccoonModel" src="./primer_video.gltf"></a-asset-item> -->
           <!-- <video id="raccoonModel" src="https://gabo-p.github.io/AR-test/titulo.mp4" autoplay loop="true" timeout="10000" crossorigin="anonymous"></video> -->
@@ -30,7 +30,7 @@
           <a-gltf-model rotation="0 0 0" position="0 0 0" scale="1 1 1" src="#raccoonModel" >
         </a-entity> -->
         <a-entity mindar-image-target="targetIndex: 0">
-          <a-video src="#bearModel" width="16" height="9" position="0 0 0" scale="0.09 0.16 1"> </a-video>
+          <a-video src="#bearModel" width="16" height="9" position="0 0 0" scale="0.09 0.23 1"> </a-video>
         </a-entity>
         <!-- <a-entity mindar-image-target="targetIndex: 0">
           <a-plane color="blue" opaciy="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
