@@ -15,10 +15,9 @@
     <a-scene mindar-image="imageTargetSrc: https://gabo-p.github.io/AR-test/target.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true">
         <a-assets timeout="100000">
           <!-- <a-asset-item id="bearModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/examples/image-tracking/assets/band-example/bear/scene.gltf"></a-asset-item> -->
-          <a-asset-item id="bearModel" autoplay src="https://gabo-p.github.io/AR-test/prueba.mp4" crossorigin="anonymous"></a-asset-item>
-          <!-- <video width="400" controls autoplay id="bearModel" src="https://gabo-p.github.io/AR-test/prueba.mp4" crossorigin="anonymous"></video> -->
+          <!-- <a-asset-item id="bearModel" src="https://gabo-p.github.io/AR-test/prueba.mp4" muted crossorigin="anonymous"></a-asset-item> -->
+          <video controls autoplay id="bearModel" src="https://gabo-p.github.io/AR-test/prueba.mp4" crossorigin="anonymous" muted></video>
           <!-- <a-asset-item id="raccoonModel" src="./primer_video.gltf"></a-asset-item> -->
-          <!-- <video id="raccoonModel" src="https://gabo-p.github.io/AR-test/titulo.mp4" autoplay loop="true" timeout="10000" crossorigin="anonymous"></video> -->
         </a-assets>
 
         <a-camera position="0 0 0" look-controls="enabled: true"></a-camera>
@@ -38,12 +37,29 @@
         <!-- <a-entity mindar-image-target="targetIndex: 0">
           <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="1 1 1" src="#bearModel" animation-mixer>
         </a-entity> -->
-    </a-scene>
+      </a-scene>
+      <span id="botonplay" style="position: absolute;bottom: 10px;left:10px;background-color: red;color: white; padding: 10px 20px;font-size: 25px;border-radius: 10px;">
+        play
+      </span>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script>
       const video = document.getElementById("bearModel");
       video.setAttribute("crossorigin", "anonymous");
       $(()=>{
-        video.play();
+        $('#botonplay').on('click',()=>{
+          $('#bearModel').get(0).play();
+        });
+        document.getElementById('botonplay').addEventListener('visibilitychange', function(event){ 
+          $('#bearModel').get(0).play();
+          console.log('asdfasdfadfasdfasdfasdfasdf');
+        });
+
+        // if($('#bearModel').is(':visible')){
+        // }else{
+        //   console.log('no es visible');
+        // }
       })
     </script>
 </body>
