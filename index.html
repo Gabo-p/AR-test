@@ -95,9 +95,10 @@
       }
       $(()=>{
         $('#botonplay').on('click',()=>{
+          $('#video_02').get(0).play(); 
           if($('#video_01').is(":visible")){
-            pararVideos();
             $('#video_01').get(0).play(); 
+            pararVideos();
           }
           if($('#video_02').is(":visible")){
           console.log('asdfasdfadfasdfasdfasdfasdf');
