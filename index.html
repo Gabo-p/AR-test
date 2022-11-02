@@ -10,36 +10,62 @@
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.5/dist/mindar-image-aframe.prod.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.5/dist/mindar-image-three.prod.js"></script>
+    <style>
+      .boton {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translate(-50%,0);
+      }
+    </style>
 </head>
 <body>
-    <a-scene mindar-image="imageTargetSrc: https://authcode.biz/ar/targets-4.mind;" color-space="sRGB" renderer="colorManagement: false, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true">
+    <a-scene mindar-image="imageTargetSrc: https://authcode.biz/ar/targets-6.mind;" color-space="sRGB" renderer="colorManagement: false, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true">
         <a-assets>
-          <!-- <a-asset-item id="bearModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/examples/image-tracking/assets/band-example/bear/scene.gltf"></a-asset-item> -->
-          <!-- <a-asset-item id="bearModel" src="https://gabo-p.github.io/AR-test/prueba.mp4" muted crossorigin="anonymous"></a-asset-item> -->
-          <video controls id="bearModel" src="https://authcode.biz/ar/video_01.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_01" src="https://authcode.biz/ar/videos/exa/discotexa_1.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_02" src="https://authcode.biz/ar/videos/exa/El Desmorning_1.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_03" src="https://authcode.biz/ar/videos/exa/El Showsero_1.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_04" src="https://authcode.biz/ar/videos/exa/Exagerados.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_05" src="https://authcode.biz/ar/videos/exa/Exagono_1.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_06" src="https://authcode.biz/ar/videos/exa/Exametro_1.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_07" src="https://authcode.biz/ar/videos/exa/Generico Exa_1.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_08" src="https://authcode.biz/ar/videos/exa/Reconexion_1.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_09" src="https://authcode.biz/ar/videos/exa/Romantic Flow.mp4" crossorigin="anonymous"></video>
+
+
+          <video controls id="video_10" src="https://authcode.biz/ar/videos/power/BDC_1.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_11" src="https://authcode.biz/ar/videos/power/Generico Power_1.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_12" src="https://authcode.biz/ar/videos/power/Gozzadera_1.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_13" src="https://authcode.biz/ar/videos/power/Guarida_1.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_14" src="https://authcode.biz/ar/videos/power/Merensalsa_1.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_15" src="https://authcode.biz/ar/videos/power/PowerMix_1.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_16" src="https://authcode.biz/ar/videos/power/Salsa con Salsa_1.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_17" src="https://authcode.biz/ar/videos/power/Yuqueo_1.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_18" src="https://authcode.biz/ar/videos/power/Zona_1.mp4" crossorigin="anonymous"></video>
           <!-- <a-asset-item id="raccoonModel" src="./primer_video.gltf"></a-asset-item> -->
         </a-assets>
 
         <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
-        <!-- <a-entity mindar-image-target="targetIndex: 0">
-          <a-gltf-model rotation="0 180 180" position="-120 -120 -120" scale="3.0 3.0 3.0" src="#raccoonModel" animation-mixer>
-        </a-entity> -->
-        <!-- <a-entity mindar-image-target="targetIndex: 0">
-          <a-gltf-model rotation="0 0 0" position="0 0 0" scale="1 1 1" src="#raccoonModel" >
-        </a-entity> -->
-        <a-entity mindar-image-target="targetIndex: 0">
-          <a-video src="#bearModel" height="9" width="16" position="0 3 0" scale="0.25 0.25 1"> </a-video>
+        <a-entity mindar-image-target="targetIndex: 0" id="obtj-1">
+          <a-video src="#video_01" height="9" width="16" position="0 3 0" scale="0.25 0.25 1"> </a-video>
         </a-entity>
-        <!-- <a-entity mindar-image-target="targetIndex: 0">
-          <a-plane color="blue" opaciy="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
-        </a-entity> -->
-        <!-- <a-entity mindar-image-target="targetIndex: 0">
-          <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="1 1 1" src="#bearModel" animation-mixer>
-        </a-entity> -->
+        <a-entity mindar-image-target="targetIndex: 1" id="obtj-1">
+          <a-video src="#video_01" height="9" width="16" position="0 3 0" scale="0.25 0.25 1"> </a-video>
+        </a-entity>
+
       </a-scene>
-      <span id="botonplay" style="position: absolute;bottom: 10px;left:10px;background-color: red;color: white; padding: 10px 20px;font-size: 25px;border-radius: 10px;cursor: pointer;font-family: Arial, Helvetica, sans-serif;">
-        play
+      <span id="botonplay" class="boton">
+        Reproducir
       </span>
 
 
@@ -49,10 +75,52 @@
       // video.setAttribute("crossorigin", "anonymous");
       $(()=>{
         $('#botonplay').on('click',()=>{
-          $('#bearModel').get(0).play();
+          if($('#video_01').is(":visible")){
+            pararVideos();
+            $('#video_01').get(0).play(); 
+          }
+          if($('#video_02').is(":visible")){
+            pararVideos();
+            $('#video_02').get(0).play();
+          }
+          if($('#video_03').is(":visible")){
+            pararVideos();
+            $('#video_03').get(0).play();
+          }
+          if($('#video_04').is(":visible")){
+            pararVideos();
+            $('#video_04').get(0).play();
+          }
+          if($('#video_05').is(":visible")){
+            pararVideos();
+            $('#video_05').get(0).play();
+          }
+          if($('#video_06').is(":visible")){
+            pararVideos();
+            $('#video_06').get(0).play();
+          }
+          if($('#video_07').is(":visible")){
+            pararVideos();
+            $('#video_07').get(0).play();
+          }
+          if($('#video_08').is(":visible")){
+            pararVideos();
+            $('#video_08').get(0).play();
+          }
+          if($('#video_09').is(":visible")){
+            pararVideos();
+            $('#video_09').get(0).play();
+          }
+          if($('#video_10').is(":visible")){
+            pararVideos();
+            $('#video_10').get(0).play();
+          }
         });
-        document.getElementById('bearModel').addEventListener('visibilitychange', function(event){ 
-          $('#bearModel').get(0).play();
+        document.getElementById('obtj-1').addEventListener('visibilitychange', function(event){ 
+          console.log('asdfasdfadfasdfasdfasdfasdf');
+          console.log('asdfasdfadfasdfasdfasdfasdf');
+          console.log('asdfasdfadfasdfasdfasdfasdf');
+          console.log('asdfasdfadfasdfasdfasdfasdf');
           console.log('asdfasdfadfasdfasdfasdfasdf');
         });
 
@@ -61,6 +129,26 @@
         //   console.log('no es visible');
         // }
       })
+      const pararVideos = () => {
+        $('#video_01').get(0).pause();
+        $('#video_02').get(0).pause();
+        $('#video_03').get(0).pause();
+        $('#video_04').get(0).pause();
+        $('#video_05').get(0).pause();
+        $('#video_06').get(0).pause();
+        $('#video_07').get(0).pause();
+        $('#video_08').get(0).pause();
+        $('#video_09').get(0).pause();
+        $('#video_10').get(0).pause();
+        $('#video_11').get(0).pause();
+        $('#video_12').get(0).pause();
+        $('#video_13').get(0).pause();
+        $('#video_14').get(0).pause();
+        $('#video_15').get(0).pause();
+        $('#video_16').get(0).pause();
+        $('#video_17').get(0).pause();
+        $('#video_18').get(0).pause();
+      }
     </script>
 </body>
 </html>
