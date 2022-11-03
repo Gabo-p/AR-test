@@ -28,33 +28,83 @@
         z-index: 1000;
       }
     </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const sceneEl = document.querySelector('a-scene');
+        const arSystem = sceneEl.systems["mindar-image-system"];
+        const exampleTarget = document.querySelector('#example-target');
+        const examplePlane = document.querySelector('#example-plane');
+        const startButton = document.querySelector("#buttonstart");
+        const stopButton = document.querySelector("#example-stop-button");
+        const pauseButton = document.querySelector("#example-pause-button");
+        const pauseKeepVideoButton = document.querySelector("#example-pause-keep-video-button");
+        const unpauseButton = document.querySelector("#example-unpause-button");
+        startButton.addEventListener('click', () => {
+          console.log("start");
+          arSystem.start(); // start AR 
+        });
+        stopButton.addEventListener('click', () => {
+          arSystem.stop(); // stop AR 
+        });
+        pauseButton.addEventListener('click', () => {
+          arSystem.pause(); // pause AR, keep video feed
+        });
+        pauseKeepVideoButton.addEventListener('click', () => {
+          arSystem.pause(true); // pause AR and video
+        });
+        unpauseButton.addEventListener('click', () => {
+          arSystem.unpause(); // unpause AR and video
+        });
+        // arReady event triggered when ready
+        sceneEl.addEventListener("arReady", (event) => {
+          // console.log("MindAR is ready")
+        });
+        // arError event triggered when something went wrong. Mostly browser compatbility issue
+        sceneEl.addEventListener("arError", (event) => {
+          // console.log("MindAR failed to start")
+        });
+        // detect target found
+        exampleTarget.addEventListener("targetFound", event => {
+          console.log("target found");
+          $('#')
+        });
+        // detect target lost
+        exampleTarget.addEventListener("targetLost", event => {
+          console.log("target lost");
+        });
+        // detect click event
+        examplePlane.addEventListener("click", event => {
+          console.log("plane click");
+        });
+      });
+    </script>
+
 </head>
 <body>
-  <div id="example-scanning-overlay" class="hidden">
-    <img src="./EXA_RECONEXION.jpg" alt="img" width="150px">
-  </div>
-    <a-scene mindar-image="imageTargetSrc: https://authcode.biz/ar/targets.mind; filterMinCF:0.1; filterBeta: 10;warmupTolerance: 1;uiScanning: #example-scanning-overlay;" color-space="sRGB" renderer="colorManagement: false, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true">
+  
+    <a-scene mindar-image="imageTargetSrc: https://authcode.biz/ar/targets.mind; filterMinCF:0.1; filterBeta: 10;warmupTolerance: 1; autoStart: false;" color-space="sRGB" renderer="colorManagement: false, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true">
         <a-assets>
-          <video controls id="video_01" src="https://authcode.biz/ar/videos/exa/discotexa_1.mp4" crossorigin="anonymous"></video>
-          <video controls id="video_02" src="https://authcode.biz/ar/videos/exa/El Desmorning_1.mp4" crossorigin="anonymous"></video>
-          <video controls id="video_03" src="https://authcode.biz/ar/videos/exa/El Showsero_1.mp4" crossorigin="anonymous"></video>
-          <video controls id="video_04" src="https://authcode.biz/ar/videos/exa/Exagerados.mp4" crossorigin="anonymous"></video>
-          <video controls id="video_05" src="https://authcode.biz/ar/videos/exa/Exagono_1.mp4" crossorigin="anonymous"></video>
-          <video controls id="video_06" src="https://authcode.biz/ar/videos/exa/Exametro_1.mp4" crossorigin="anonymous"></video>
-          <video controls id="video_07" src="https://authcode.biz/ar/videos/exa/Generico Exa_1.mp4" crossorigin="anonymous"></video>
-          <video controls id="video_08" src="https://authcode.biz/ar/videos/exa/Reconexion_1.mp4" crossorigin="anonymous"></video>
-          <video controls id="video_09" src="https://authcode.biz/ar/videos/exa/Romantic Flow.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_01" src="https://authcode.biz/ar/videos/exa/11.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_02" src="https://authcode.biz/ar/videos/exa/12.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_03" src="https://authcode.biz/ar/videos/exa/13.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_04" src="https://authcode.biz/ar/videos/exa/14.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_05" src="https://authcode.biz/ar/videos/exa/15.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_06" src="https://authcode.biz/ar/videos/exa/16.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_07" src="https://authcode.biz/ar/videos/exa/17.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_08" src="https://authcode.biz/ar/videos/exa/18.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_09" src="https://authcode.biz/ar/videos/exa/19.mp4" crossorigin="anonymous"></video>
 
 
-          <video controls id="video_10" src="https://authcode.biz/ar/videos/power/BDC_1.mp4" crossorigin="anonymous"></video>
-          <video controls id="video_11" src="https://authcode.biz/ar/videos/power/Generico Power_1.mp4" crossorigin="anonymous"></video>
-          <video controls id="video_12" src="https://authcode.biz/ar/videos/power/Gozzadera_1.mp4" crossorigin="anonymous"></video>
-          <video controls id="video_13" src="https://authcode.biz/ar/videos/power/Guarida_1.mp4" crossorigin="anonymous"></video>
-          <video controls id="video_14" src="https://authcode.biz/ar/videos/power/Merensalsa_1.mp4" crossorigin="anonymous"></video>
-          <video controls id="video_15" src="https://authcode.biz/ar/videos/power/PowerMix_1.mp4" crossorigin="anonymous"></video>
-          <video controls id="video_16" src="https://authcode.biz/ar/videos/power/Salsa con Salsa_1.mp4" crossorigin="anonymous"></video>
-          <video controls id="video_17" src="https://authcode.biz/ar/videos/power/Yuqueo_1.mp4" crossorigin="anonymous"></video>
-          <video controls id="video_18" src="https://authcode.biz/ar/videos/power/Zona_1.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_10" src="https://authcode.biz/ar/videos/power/1.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_11" src="https://authcode.biz/ar/videos/power/2.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_12" src="https://authcode.biz/ar/videos/power/3.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_13" src="https://authcode.biz/ar/videos/power/4.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_14" src="https://authcode.biz/ar/videos/power/5.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_15" src="https://authcode.biz/ar/videos/power/6.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_16" src="https://authcode.biz/ar/videos/power/7.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_17" src="https://authcode.biz/ar/videos/power/8.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_18" src="https://authcode.biz/ar/videos/power/9.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_18" src="https://authcode.biz/ar/videos/power/10.mp4" crossorigin="anonymous"></video>
           <!-- <a-asset-item id="raccoonModel" src="./primer_video.gltf"></a-asset-item> -->
         </a-assets>
 
@@ -68,11 +118,14 @@
         </a-entity>
 
       </a-scene>
-      <span id="botonplay" class="boton">
+      <span id="botonplay" class="boton" style="display: none;">
         Reproducir
       </span>
+      <span id="botonstart" class="boton">
+        Iniciar
+      </span>
 
-
+      
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script>
       // const video = document.getElementById("bearModel");
