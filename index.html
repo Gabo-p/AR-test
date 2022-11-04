@@ -82,7 +82,7 @@
 </head>
 <body>
   
-    <a-scene mindar-image="imageTargetSrc: https://authcode.biz/ar/targets_prueba.mind; filterMinCF:0.1; filterBeta: 10;warmupTolerance: 1; autoStart: false;" color-space="sRGB" renderer="colorManagement: false, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true">
+    <a-scene mindar-image="imageTargetSrc: https://authcode.biz/ar/targets.mind; filterMinCF:0.1; filterBeta: 10;warmupTolerance: 1; autoStart: false;" color-space="sRGB" renderer="colorManagement: false, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true">
         <a-assets>
           <video controls id="video_01" src="https://authcode.biz/ar/videos/exa/11.mp4" crossorigin="anonymous"></video>
           <video controls id="video_02" src="https://authcode.biz/ar/videos/exa/12.mp4" crossorigin="anonymous"></video>
@@ -104,17 +104,68 @@
           <video controls id="video_16" src="https://authcode.biz/ar/videos/power/7.mp4" crossorigin="anonymous"></video>
           <video controls id="video_17" src="https://authcode.biz/ar/videos/power/8.mp4" crossorigin="anonymous"></video>
           <video controls id="video_18" src="https://authcode.biz/ar/videos/power/9.mp4" crossorigin="anonymous"></video>
-          <video controls id="video_18" src="https://authcode.biz/ar/videos/power/10.mp4" crossorigin="anonymous"></video>
+          <video controls id="video_19" src="https://authcode.biz/ar/videos/power/10.mp4" crossorigin="anonymous"></video>
           <!-- <a-asset-item id="raccoonModel" src="./primer_video.gltf"></a-asset-item> -->
         </a-assets>
 
         <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
         <a-entity mindar-image-target="targetIndex: 0" id="obtj-1">
-          <a-video src="#video_02" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
+          <a-video src="#video_01" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
         </a-entity>
         <a-entity mindar-image-target="targetIndex: 1">
+          <a-video src="#video_02" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
+        </a-entity>
+        <a-entity mindar-image-target="targetIndex: 2">
           <a-video src="#video_03" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
+        </a-entity>
+        <a-entity mindar-image-target="targetIndex: 3">
+          <a-video src="#video_04" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
+        </a-entity>
+        <a-entity mindar-image-target="targetIndex: 4">
+          <a-video src="#video_05" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
+        </a-entity>
+        <a-entity mindar-image-target="targetIndex: 5">
+          <a-video src="#video_06" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
+        </a-entity>
+        <a-entity mindar-image-target="targetIndex: 6">
+          <a-video src="#video_07" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
+        </a-entity>
+        <a-entity mindar-image-target="targetIndex: 7">
+          <a-video src="#video_08" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
+        </a-entity>
+        <a-entity mindar-image-target="targetIndex: 8">
+          <a-video src="#video_09" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
+        </a-entity>
+        <a-entity mindar-image-target="targetIndex: 9">
+          <a-video src="#video_10" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
+        </a-entity>
+        <a-entity mindar-image-target="targetIndex: 10">
+          <a-video src="#video_11" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
+        </a-entity>
+        <a-entity mindar-image-target="targetIndex: 11">
+          <a-video src="#video_12" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
+        </a-entity>
+        <a-entity mindar-image-target="targetIndex: 12">
+          <a-video src="#video_13" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
+        </a-entity>
+        <a-entity mindar-image-target="targetIndex: 13">
+          <a-video src="#video_14" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
+        </a-entity>
+        <a-entity mindar-image-target="targetIndex: 14">
+          <a-video src="#video_15" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
+        </a-entity>
+        <a-entity mindar-image-target="targetIndex: 15">
+          <a-video src="#video_16" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
+        </a-entity>
+        <a-entity mindar-image-target="targetIndex: 16">
+          <a-video src="#video_17" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
+        </a-entity>
+        <a-entity mindar-image-target="targetIndex: 17">
+          <a-video src="#video_18" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
+        </a-entity>
+        <a-entity mindar-image-target="targetIndex: 18">
+          <a-video src="#video_19" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
         </a-entity>
 
       </a-scene>
