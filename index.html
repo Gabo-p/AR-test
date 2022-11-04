@@ -21,7 +21,7 @@
         text-decoration: none;
         display: inline-block;
         font-size: 16px;
-        position: absolute;
+        position: fixed;
         bottom: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
@@ -87,24 +87,7 @@
           $("#buttonplay").fadeIn();
           arSystem.start(); // start AR 
         });
-        // stopButton.addEventListener('click', () => {
-        //   arSystem.stop(); // stop AR 
-        // });
-        // pauseButton.addEventListener('click', () => {
-        //   arSystem.pause(); // pause AR, keep video feed
-        // });
-        // pauseKeepVideoButton.addEventListener('click', () => {
-        //   arSystem.pause(true); // pause AR and video
-        // });
-        // unpauseButton.addEventListener('click', () => {
-        //   arSystem.unpause(); // unpause AR and video
-        // });
-        // arReady event triggered when ready
-        // sceneEl.addEventListener("arReady", (event) => {
-        //   // console.log("MindAR is ready")
-        // });
-        // arError event triggered when something went wrong. Mostly browser compatbility issue
-        // detect target found
+        
         obtj1.addEventListener("targetFound", event => {
           console.log("Target 1 encontrado");
         });
@@ -134,6 +117,7 @@
         });
         obtj10.addEventListener("targetFound", event => {
           console.log("Target 10 encontrado");
+          $('#video_10').get(0).play();
         });
         obtj11.addEventListener("targetFound", event => {
           console.log("Target 11 encontrado");
@@ -162,13 +146,13 @@
         obtj19.addEventListener("targetFound", event => {
           console.log("Target 19 encontrado");
         });
+        
         // detect target lost
-        exampleTarget.addEventListener("targetLost", event => {
-          console.log("target lost");
+        obtj10.addEventListener("targetLost", event => {
+          $('#video_10').get(0).pause();
         });
-        // detect click event
-        examplePlane.addEventListener("click", event => {
-          console.log("plane click");
+        obtj10.addEventListener("targetLost", event => {
+          $('#video_10').get(0).play();
         });
       });
     </script>
