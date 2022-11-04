@@ -88,7 +88,7 @@
         });
         
         obtj1.addEventListener("targetFound", event => {
-          console.log("Target 1 encontrado");
+          $('#video_11').get(0).play();
         });
         obtj2.addEventListener("targetFound", event => {
           console.log("Target 2 encontrado");
@@ -121,10 +121,10 @@
           $('#video_2').get(0).play();
         });
         obtj12.addEventListener("targetFound", event => {
-          console.log("Target 12 encontrado");
+          $('#video_9').get(0).play();
         });
         obtj13.addEventListener("targetFound", event => {
-          console.log("Target 13 encontrado");
+          $('#video_3').get(0).play();
         });
         obtj14.addEventListener("targetFound", event => {
           $('#video_4').get(0).play();
@@ -139,7 +139,7 @@
           $('#video_6').get(0).play();
         });
         obtj18.addEventListener("targetFound", event => {
-          console.log("Target 18 encontrado");
+          $('#video_7').get(0).play();
         });
         obtj19.addEventListener("targetFound", event => {
           $('#video_8').get(0).play();
@@ -149,33 +149,45 @@
         // obtj10.addEventListener("targetLost", event => {
           //   $('#video_10').get(0).pause();
           // });
-          obtj4.addEventListener("targetLost", event => {
-            $('#video_13').get(0).pause();
-          });
-          obtj9.addEventListener("targetLost", event => {
-            $('#video_9').get(0).pause();
-          });
-          obtj10.addEventListener("targetLost", event => {
-            $('#video_10').get(0).pause();
-          });
-          obtj11.addEventListener("targetLost", event => {
-            $('#video_2').get(0).pause();
-          });
-          obtj14.addEventListener("targetLost", event => {
-            $('#video_4').get(0).pause();
-          });
-          obtj15.addEventListener("targetLost", event => {
-            $('#video_5').get(0).pause();
-          });
-          obtj16.addEventListener("targetLost", event => {
-            $('#video_10').get(0).pause();
-          });
-          obtj17.addEventListener("targetLost", event => {
-            $('#video_6').get(0).pause();
-          });
-          obtj19.addEventListener("targetLost", event => {
-            $('#video_8').get(0).pause();
-          });
+        obtj1.addEventListener("targetLost", event => {
+          $('#video_11').get(0).pause();
+        });
+        obtj4.addEventListener("targetLost", event => {
+          $('#video_13').get(0).pause();
+        });
+        obtj9.addEventListener("targetLost", event => {
+          $('#video_9').get(0).pause();
+        });
+        obtj10.addEventListener("targetLost", event => {
+          $('#video_10').get(0).pause();
+        });
+        obtj11.addEventListener("targetLost", event => {
+          $('#video_2').get(0).pause();
+        });
+        obtj12.addEventListener("targetLost", event => {
+          $('#video_9').get(0).pause();
+        });
+        obtj13.addEventListener("targetLost", event => {
+          $('#video_3').get(0).pause();
+        });
+        obtj14.addEventListener("targetLost", event => {
+          $('#video_4').get(0).pause();
+        });
+        obtj15.addEventListener("targetLost", event => {
+          $('#video_5').get(0).pause();
+        });
+        obtj16.addEventListener("targetLost", event => {
+          $('#video_10').get(0).pause();
+        });
+        obtj17.addEventListener("targetLost", event => {
+          $('#video_6').get(0).pause();
+        });
+        obtj18.addEventListener("targetLost", event => {
+          $('#video_7').get(0).pause();
+        });
+        obtj19.addEventListener("targetLost", event => {
+          $('#video_8').get(0).pause();
+        });
       });
     </script>
 
