@@ -87,26 +87,23 @@
           $("#buttonplay").fadeIn();
           arSystem.start(); // start AR 
         });
-        stopButton.addEventListener('click', () => {
-          arSystem.stop(); // stop AR 
-        });
-        pauseButton.addEventListener('click', () => {
-          arSystem.pause(); // pause AR, keep video feed
-        });
-        pauseKeepVideoButton.addEventListener('click', () => {
-          arSystem.pause(true); // pause AR and video
-        });
-        unpauseButton.addEventListener('click', () => {
-          arSystem.unpause(); // unpause AR and video
-        });
+        // stopButton.addEventListener('click', () => {
+        //   arSystem.stop(); // stop AR 
+        // });
+        // pauseButton.addEventListener('click', () => {
+        //   arSystem.pause(); // pause AR, keep video feed
+        // });
+        // pauseKeepVideoButton.addEventListener('click', () => {
+        //   arSystem.pause(true); // pause AR and video
+        // });
+        // unpauseButton.addEventListener('click', () => {
+        //   arSystem.unpause(); // unpause AR and video
+        // });
         // arReady event triggered when ready
-        sceneEl.addEventListener("arReady", (event) => {
-          // console.log("MindAR is ready")
-        });
+        // sceneEl.addEventListener("arReady", (event) => {
+        //   // console.log("MindAR is ready")
+        // });
         // arError event triggered when something went wrong. Mostly browser compatbility issue
-        sceneEl.addEventListener("arError", (event) => {
-          // console.log("MindAR failed to start")
-        });
         // detect target found
         obtj1.addEventListener("targetFound", event => {
           console.log("Target 1 encontrado");
