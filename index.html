@@ -53,7 +53,29 @@
       document.addEventListener("DOMContentLoaded", function() {
         const sceneEl = document.querySelector('a-scene');
         const arSystem = sceneEl.systems["mindar-image-system"];
-        const exampleTarget = document.querySelector('#obtj-1');
+        
+        // objetos
+        const obtj1 = document.querySelector('#obtj-1');
+        const obtj2 = document.querySelector('#obtj-2');
+        const obtj3 = document.querySelector('#obtj-3');
+        const obtj4 = document.querySelector('#obtj-4');
+        const obtj5 = document.querySelector('#obtj-5');
+        const obtj6 = document.querySelector('#obtj-6');
+        const obtj7 = document.querySelector('#obtj-7');
+        const obtj8 = document.querySelector('#obtj-8');
+        const obtj9 = document.querySelector('#obtj-9');
+        const obtj10 = document.querySelector('#obtj-10');
+        const obtj11 = document.querySelector('#obtj-11');
+        const obtj12 = document.querySelector('#obtj-12');
+        const obtj13 = document.querySelector('#obtj-13');
+        const obtj14 = document.querySelector('#obtj-14');
+        const obtj15 = document.querySelector('#obtj-15');
+        const obtj16 = document.querySelector('#obtj-16');
+        const obtj17 = document.querySelector('#obtj-17');
+        const obtj18 = document.querySelector('#obtj-18');
+        const obtj19 = document.querySelector('#obtj-19');
+         
+        
         const examplePlane = document.querySelector('#example-plane');
         const startButton = document.querySelector("#buttonstart");
         const stopButton = document.querySelector("#example-stop-button");
@@ -86,9 +108,62 @@
           // console.log("MindAR failed to start")
         });
         // detect target found
-        exampleTarget.addEventListener("targetFound", event => {
-          console.log("target found");
-          $('#')
+        obtj1.addEventListener("targetFound", event => {
+          console.log("Target 1 encontrado");
+        });
+        obtj2.addEventListener("targetFound", event => {
+          console.log("Target 2 encontrado");
+        });
+        obtj3.addEventListener("targetFound", event => {
+          console.log("Target 3 encontrado");
+        });
+        obtj4.addEventListener("targetFound", event => {
+          console.log("Target 4 encontrado");
+        });
+        obtj5.addEventListener("targetFound", event => {
+          console.log("Target 5 encontrado");
+        });
+        obtj6.addEventListener("targetFound", event => {
+          console.log("Target 6 encontrado");
+        });
+        obtj7.addEventListener("targetFound", event => {
+          console.log("Target 7 encontrado");
+        });
+        obtj8.addEventListener("targetFound", event => {
+          console.log("Target 8 encontrado");
+        });
+        obtj9.addEventListener("targetFound", event => {
+          console.log("Target 9 encontrado");
+        });
+        obtj10.addEventListener("targetFound", event => {
+          console.log("Target 10 encontrado");
+        });
+        obtj11.addEventListener("targetFound", event => {
+          console.log("Target 11 encontrado");
+        });
+        obtj12.addEventListener("targetFound", event => {
+          console.log("Target 12 encontrado");
+        });
+        obtj13.addEventListener("targetFound", event => {
+          console.log("Target 13 encontrado");
+        });
+        obtj14.addEventListener("targetFound", event => {
+          console.log("Target 14 encontrado");
+        });
+        obtj15.addEventListener("targetFound", event => {
+          console.log("Target 15 encontrado");
+        });
+        obtj16.addEventListener("targetFound", event => {
+          console.log("Target 16 encontrado");
+        });
+        obtj17.addEventListener("targetFound", event => {
+          console.log("Target 17 encontrado");
+        });
+        obtj18.addEventListener("targetFound", event => {
+          console.log("Target 18 encontrado");
+        });
+        obtj19.addEventListener("targetFound", event => {
+          console.log("Target 19 encontrado");
         });
         // detect target lost
         exampleTarget.addEventListener("targetLost", event => {
@@ -135,58 +210,58 @@
         <a-entity mindar-image-target="targetIndex: 0" id="obtj-1">
           <a-video src="#video_01" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
         </a-entity>
-        <a-entity mindar-image-target="targetIndex: 1">
+        <a-entity mindar-image-target="targetIndex: 1" id="obtj-2">
           <a-video src="#video_02" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
         </a-entity>
-        <a-entity mindar-image-target="targetIndex: 2">
+        <a-entity mindar-image-target="targetIndex: 2" id="obtj-3">
           <a-video src="#video_03" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
         </a-entity>
-        <a-entity mindar-image-target="targetIndex: 3">
+        <a-entity mindar-image-target="targetIndex: 3" id="obtj-4">
           <a-video src="#video_04" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
         </a-entity>
-        <a-entity mindar-image-target="targetIndex: 4">
+        <a-entity mindar-image-target="targetIndex: 4" id="obtj-5">
           <a-video src="#video_05" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
         </a-entity>
-        <a-entity mindar-image-target="targetIndex: 5">
+        <a-entity mindar-image-target="targetIndex: 5" id="obtj-6">
           <a-video src="#video_06" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
         </a-entity>
-        <a-entity mindar-image-target="targetIndex: 6">
+        <a-entity mindar-image-target="targetIndex: 6" id="obtj-7">
           <a-video src="#video_07" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
         </a-entity>
-        <a-entity mindar-image-target="targetIndex: 7">
+        <a-entity mindar-image-target="targetIndex: 7" id="obtj-8">
           <a-video src="#video_08" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
         </a-entity>
-        <a-entity mindar-image-target="targetIndex: 8">
+        <a-entity mindar-image-target="targetIndex: 8" id="obtj-9">
           <a-video src="#video_09" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
         </a-entity>
-        <a-entity mindar-image-target="targetIndex: 9">
+        <a-entity mindar-image-target="targetIndex: 9" id="obtj-10">
           <a-video src="#video_10" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
         </a-entity>
-        <a-entity mindar-image-target="targetIndex: 10">
+        <a-entity mindar-image-target="targetIndex: 10" id="obtj-11">
           <a-video src="#video_11" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
         </a-entity>
-        <a-entity mindar-image-target="targetIndex: 11">
+        <a-entity mindar-image-target="targetIndex: 11" id="obtj-12">
           <a-video src="#video_12" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
         </a-entity>
-        <a-entity mindar-image-target="targetIndex: 12">
+        <a-entity mindar-image-target="targetIndex: 12" id="obtj-13">
           <a-video src="#video_13" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
         </a-entity>
-        <a-entity mindar-image-target="targetIndex: 13">
+        <a-entity mindar-image-target="targetIndex: 13" id="obtj-14">
           <a-video src="#video_14" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
         </a-entity>
-        <a-entity mindar-image-target="targetIndex: 14">
+        <a-entity mindar-image-target="targetIndex: 14" id="obtj-15">
           <a-video src="#video_15" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
         </a-entity>
-        <a-entity mindar-image-target="targetIndex: 15">
+        <a-entity mindar-image-target="targetIndex: 15" id="obtj-16">
           <a-video src="#video_16" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
         </a-entity>
-        <a-entity mindar-image-target="targetIndex: 16">
+        <a-entity mindar-image-target="targetIndex: 16" id="obtj-17">
           <a-video src="#video_17" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
         </a-entity>
-        <a-entity mindar-image-target="targetIndex: 17">
+        <a-entity mindar-image-target="targetIndex: 17" id="obtj-18">
           <a-video src="#video_18" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
         </a-entity>
-        <a-entity mindar-image-target="targetIndex: 18">
+        <a-entity mindar-image-target="targetIndex: 18" id="obtj-19">
           <a-video src="#video_19" height="9" width="16" position="0 0 0" scale="0.15 0.15 1"> </a-video>
         </a-entity>
 
