@@ -53,7 +53,7 @@
       document.addEventListener("DOMContentLoaded", function() {
         const sceneEl = document.querySelector('a-scene');
         const arSystem = sceneEl.systems["mindar-image-system"];
-        
+         
         // objetos
         const obtj1 = document.querySelector('#obtj-1');
         const obtj2 = document.querySelector('#obtj-2');
@@ -91,6 +91,7 @@
           $('#video_11').get(0).play();
         });
         obtj2.addEventListener("targetFound", event => {
+          console.log('target encontrado');
           $('#video_12').get(0).play();
         });
         obtj3.addEventListener("targetFound", event => {
@@ -212,7 +213,7 @@
 </head>
 <body>
   
-    <a-scene mindar-image="imageTargetSrc: https://authcode.biz/ar/targets-final.mind; filterMinCF:0.1; filterBeta: 10;warmupTolerance: 1; autoStart: false;" color-space="sRGB" renderer="colorManagement: false, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true">
+    <a-scene mindar-image="imageTargetSrc: https://authcode.biz/ar/targets_prueba.mind; filterMinCF:0.1; filterBeta: 10;warmupTolerance: 1; autoStart: false;" color-space="sRGB" renderer="colorManagement: false, physicallyCorrectLights" vr-mode-ui="enabled: true" device-orientation-permission-ui="enabled: true">
         <a-assets>
           <video controls id="video_11" src="https://authcode.biz/ar/videos/exa/11.mp4" crossorigin="anonymous"></video>
           <video controls id="video_12" src="https://authcode.biz/ar/videos/exa/12.mp4" crossorigin="anonymous"></video>
