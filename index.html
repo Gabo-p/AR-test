@@ -36,6 +36,14 @@
         transform: translate(-50%,-50%);
         z-index: 1000;
       }
+      .modal-video{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        border-radius: 10px;
+        background-color: white;
+        padding: 5px;
+      }
       @keyframes btn {
         0%{
           transform: translate(-50%,-50%) scale(0.9);
@@ -139,6 +147,10 @@
           $('#video_3').get(0).play();
         });
         obtj18.addEventListener("targetFound", event => {
+          if(navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i)){
+            $('#modal_video_01').fadeIn();
+            $('#video_modal_01').get(0).pause();
+          }
           $('#video_1').get(0).play();
         });
         obtj19.addEventListener("targetFound", event => {
@@ -146,9 +158,6 @@
         });
         
         // detect target lost
-        // obtj10.addEventListener("targetLost", event => {
-          //   $('#video_10').get(0).pause();
-          // });
         obtj1.addEventListener("targetLost", event => {
           $('#video_11').get(0).pause();
         });
@@ -201,6 +210,8 @@
           $('#video_3').get(0).pause();
         });
         obtj18.addEventListener("targetLost", event => {
+          $('#modal_video_01').fadeOut();
+          $('#video_modal_01').get(0).pause();
           $('#video_1').get(0).pause();
         });
         obtj19.addEventListener("targetLost", event => {
@@ -214,27 +225,27 @@
   
     <a-scene mindar-image="imageTargetSrc: https://authcode.biz/ar/audiosistema/targets_nuevos.mind; filterMinCF:0.1; filterBeta: 10;warmupTolerance: 1; autoStart: false;" color-space="sRGB" renderer="colorManagement: false, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true">
         <a-assets>
-          <video controls="true" id="video_11" src="https://authcode.biz/ar/videos/exa/11.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
-          <video controls="true" id="video_12" src="https://authcode.biz/ar/videos/exa/12.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
-          <video controls="true" id="video_13" src="https://authcode.biz/ar/videos/exa/13.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
-          <video controls="true" id="video_14" src="https://authcode.biz/ar/videos/exa/14.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
-          <video controls="true" id="video_15" src="https://authcode.biz/ar/videos/exa/15.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
-          <video controls="true" id="video_16" src="https://authcode.biz/ar/videos/exa/16.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
-          <video controls="true" id="video_17" src="https://authcode.biz/ar/videos/exa/17.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
-          <video controls="true" id="video_18" src="https://authcode.biz/ar/videos/exa/18.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
-          <video controls="true" id="video_19" src="https://authcode.biz/ar/videos/exa/19.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
+          <video controls="true" id="video_11" src="https://authcode.biz/ar/audiosistema/videos/exa/11.mp4" crossorigin="anonymous" webkit-playsinline playsinline muted></video>
+          <video controls="true" id="video_12" src="https://authcode.biz/ar/audiosistema/videos/exa/12.mp4" crossorigin="anonymous" webkit-playsinline playsinline muted></video>
+          <video controls="true" id="video_13" src="https://authcode.biz/ar/audiosistema/videos/exa/13.mp4" crossorigin="anonymous" webkit-playsinline playsinline muted></video>
+          <video controls="true" id="video_14" src="https://authcode.biz/ar/audiosistema/videos/exa/14.mp4" crossorigin="anonymous" webkit-playsinline playsinline muted></video>
+          <video controls="true" id="video_15" src="https://authcode.biz/ar/audiosistema/videos/exa/15.mp4" crossorigin="anonymous" webkit-playsinline playsinline muted></video>
+          <video controls="true" id="video_16" src="https://authcode.biz/ar/audiosistema/videos/exa/16.mp4" crossorigin="anonymous" webkit-playsinline playsinline muted></video>
+          <video controls="true" id="video_17" src="https://authcode.biz/ar/audiosistema/videos/exa/17.mp4" crossorigin="anonymous" webkit-playsinline playsinline muted></video>
+          <video controls="true" id="video_18" src="https://authcode.biz/ar/audiosistema/videos/exa/18.mp4" crossorigin="anonymous" webkit-playsinline playsinline muted></video>
+          <video controls="true" id="video_19" src="https://authcode.biz/ar/audiosistema/videos/exa/19.mp4" crossorigin="anonymous" webkit-playsinline playsinline muted></video>
 
 
-          <video controls="true" id="video_1" src="https://authcode.biz/ar/audiosistema/videos/power/1.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
-          <video controls="true" id="video_2" src="https://authcode.biz/ar/videos/power/2.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
-          <video controls="true" id="video_3" src="https://authcode.biz/ar/videos/power/3.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
-          <video controls="true" id="video_4" src="https://authcode.biz/ar/videos/power/4.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
-          <video controls="true" id="video_5" src="https://authcode.biz/ar/videos/power/5.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
-          <video controls="true" id="video_6" src="https://authcode.biz/ar/videos/power/6.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
-          <video controls="true" id="video_7" src="https://authcode.biz/ar/videos/power/7.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
-          <video controls="true" id="video_8" src="https://authcode.biz/ar/videos/power/8.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
-          <video controls="true" id="video_9" src="https://authcode.biz/ar/videos/power/9.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
-          <video controls="true" id="video_10" src="https://authcode.biz/ar/videos/power/10.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
+          <video controls="true" id="video_1" src="https://authcode.biz/ar/audiosistema/videos/power/1.mp4" crossorigin="anonymous" webkit-playsinline playsinline muted></video>
+          <video controls="true" id="video_2" src="https://authcode.biz/ar/audiosistema/videos/power/2.mp4" crossorigin="anonymous" webkit-playsinline playsinline muted></video>
+          <video controls="true" id="video_3" src="https://authcode.biz/ar/audiosistema/videos/power/3.mp4" crossorigin="anonymous" webkit-playsinline playsinline muted></video>
+          <video controls="true" id="video_4" src="https://authcode.biz/ar/audiosistema/videos/power/4.mp4" crossorigin="anonymous" webkit-playsinline playsinline muted></video>
+          <video controls="true" id="video_5" src="https://authcode.biz/ar/audiosistema/videos/power/5.mp4" crossorigin="anonymous" webkit-playsinline playsinline muted></video>
+          <video controls="true" id="video_6" src="https://authcode.biz/ar/audiosistema/videos/power/6.mp4" crossorigin="anonymous" webkit-playsinline playsinline muted></video>
+          <video controls="true" id="video_7" src="https://authcode.biz/ar/audiosistema/videos/power/7.mp4" crossorigin="anonymous" webkit-playsinline playsinline muted></video>
+          <video controls="true" id="video_8" src="https://authcode.biz/ar/audiosistema/videos/power/8.mp4" crossorigin="anonymous" webkit-playsinline playsinline muted></video>
+          <video controls="true" id="video_9" src="https://authcode.biz/ar/audiosistema/videos/power/9.mp4" crossorigin="anonymous" webkit-playsinline playsinline muted></video>
+          <video controls="true" id="video_10" src="https://authcode.biz/ar/audiosistema/videos/power/10.mp4" crossorigin="anonymous" webkit-playsinline playsinline muted></video>
           <!-- <a-asset-item id="raccoonModel" src="./primer_video.gltf"></a-asset-item> -->
         </a-assets>
 
@@ -302,95 +313,10 @@
       <span id="buttonstart" class="boton" oncopy="return false" oncut="return false">
         Presiona para Iniciar
       </span>
-
+      <div class="modal-video" id="modal_video_01" style="display: none;">
+        <video id="video_modal_01" width="9" height="16" src="https://authcode.biz/ar/audiosistema/videos/power/1.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
+      </div>
       
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <script>
-      // const video = document.getElementById("bearModel");
-      // video.setAttribute("crossorigin", "anonymous");
-      const pararVideos = () => {
-        $('#video_01').get(0).pause();
-        $('#video_02').get(0).pause();
-        $('#video_03').get(0).pause();
-        $('#video_04').get(0).pause();
-        $('#video_05').get(0).pause();
-        $('#video_06').get(0).pause();
-        $('#video_07').get(0).pause();
-        $('#video_08').get(0).pause();
-        $('#video_09').get(0).pause();
-        $('#video_10').get(0).pause();
-        $('#video_11').get(0).pause();
-        $('#video_12').get(0).pause();
-        $('#video_13').get(0).pause();
-        $('#video_14').get(0).pause();
-        $('#video_15').get(0).pause();
-        $('#video_16').get(0).pause();
-        $('#video_17').get(0).pause();
-        $('#video_18').get(0).pause();
-      }
-      $(()=>{
-        $('#botonplay').on('click',()=>{
-          if($('#obtj-1').is(":visible")){
-            $('#video_02').get(0).play(); 
-            // $('#video_01').get(0).play(); 
-            pararVideos();
-          }
-          if($('#video_02').is(":visible")){
-          console.log('asdfasdfadfasdfasdfasdfasdf');
-          console.log('asdfasdfadfasdfasdfasdfasdf');
-          console.log('asdfasdfadfasdfasdfasdfasdf');
-          console.log('asdfasdfadfasdfasdfasdfasdf');
-
-            pararVideos();
-            $('#video_02').get(0).play();
-          }
-          if($('#video_03').is(":visible")){
-            pararVideos();
-            $('#video_03').get(0).play();
-          }
-          if($('#video_04').is(":visible")){
-            pararVideos();
-            $('#video_04').get(0).play();
-          }
-          if($('#video_05').is(":visible")){
-            pararVideos();
-            $('#video_05').get(0).play();
-          }
-          if($('#video_06').is(":visible")){
-            pararVideos();
-            $('#video_06').get(0).play();
-          }
-          if($('#video_07').is(":visible")){
-            pararVideos();
-            $('#video_07').get(0).play();
-          }
-          if($('#video_08').is(":visible")){
-            pararVideos();
-            $('#video_08').get(0).play();
-          }
-          if($('#video_09').is(":visible")){
-            pararVideos();
-            $('#video_09').get(0).play();
-          }
-          if($('#video_10').is(":visible")){
-            pararVideos();
-            $('#video_10').get(0).play();
-          }
-        });
-        document.getElementById('obtj-1').addEventListener('visibilitychange', function(event){ 
-          console.log('asdfasdfadfasdfasdfasdfasdf');
-          console.log('asdfasdfadfasdfasdfasdfasdf');
-          console.log('asdfasdfadfasdfasdfasdfasdf');
-          console.log('asdfasdfadfasdfasdfasdfasdf');
-          console.log('asdfasdfadfasdfasdfasdfasdf');
-        });
-
-        // if($('#bearModel').is(':visible')){
-        // }else{
-        //   console.log('no es visible');
-        // }
-      })
-      
-    </script>
 </body>
 </html>
