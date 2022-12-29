@@ -1,15 +1,29 @@
+<!--
+  @author Gabriel Perez <bayrongp2001@gmail.com>
+ -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- 
+    Etiquetas Meta para responsive y charset
+   -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 
+      Titulo de la pagina
+     -->
     <title>AuthCode AR | </title>
+    <!-- 
+      Incluimos los scripts que crean el plano ar y todos sus dependencias
+     -->
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.5/dist/mindar-image.prod.js"></script>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.5/dist/mindar-image-aframe.prod.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.5/dist/mindar-image-three.prod.js"></script>
+    
+    <!-- Estilos css para el documento -->
     <style>
       .boton {
         font-family: Arial, Helvetica, sans-serif;
@@ -65,12 +79,22 @@
         }
       }
     </style>
+    <!-- Script para poder  -->
     <script>
+      /*
+      * funcion que se ejecuta al momento de terminar la carga completa de la pagina
+      */
       document.addEventListener("DOMContentLoaded", function() {
+        /*
+        * variables contenedoras de los elementos Ar
+        */
+
+        // Variable para obtener la escena ar 
         const sceneEl = document.querySelector('a-scene');
+        // Variable para obtener de la escena el sistema de rastreo de target 
         const arSystem = sceneEl.systems["mindar-image-system"];
          
-        // objetos
+        // variables contenedoras de entidades AR 
         const obtj1 = document.querySelector('#obtj-1');
         const obtj2 = document.querySelector('#obtj-2');
         const obtj3 = document.querySelector('#obtj-3');
@@ -91,23 +115,34 @@
         const obtj18 = document.querySelector('#obtj-18');
         const obtj19 = document.querySelector('#obtj-19');
          
-        
-        const examplePlane = document.querySelector('#example-plane');
+        // variables contenedoras de objetos UI
         const startButton = document.querySelector("#buttonstart");
-        const stopButton = document.querySelector("#example-stop-button");
-        const pauseButton = document.querySelector("#example-pause-button");
-        const pauseKeepVideoButton = document.querySelector("#example-pause-keep-video-button");
-        const unpauseButton = document.querySelector("#example-unpause-button");
+        
+        /**
+         * Eventos 
+        */
+
+        // evento para click del boton play 
         startButton.addEventListener('click', () => {
+          // ocultamos el boton play
           $("#buttonstart").fadeOut();
-          arSystem.start(); // start AR 
+          // iniciamos el sistema ar
+          arSystem.start();  
         });
         
+        /**
+         * Escucha para eventos "targetFound" objetivo encontrado
+         * se hace uno por objeto cada objeto o target que tengamos dentro de los objetivos
+        */
         obtj1.addEventListener("targetFound", event => {
+          // revisamos el navegador si se esta ejecutando en un iphone, ipad o ipod para realizar acciones diferentes a si es un dispositivo android
           if(navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i)){
+            // mostramos el modal
             $('#modal_video_11').fadeIn();
+            // damos play al video en el modal
             $('#video_modal_11').get(0).play();
           }
+          // damos play al video en el plano ar
           $('#video_11').get(0).play();
         });
         obtj2.addEventListener("targetFound", event => {
@@ -238,10 +273,16 @@
           $('#video_4').get(0).play();
         });
         
-        // detect target lost
+        /**
+         * Escuchas para eventos "targetLost" objetivo perdido
+        */
+        // declaramos el evento
         obtj1.addEventListener("targetLost", event => {
+          // ocultamos el modal
           $('#modal_video_11').fadeOut();
+          // pausamos el video en el modal
           $('#video_modal_11').get(0).pause();
+          // pausamos el video en el plano ar
           $('#video_11').get(0).pause();
         });
         obtj2.addEventListener("targetLost", event => {
@@ -339,17 +380,22 @@
 
 </head>
 <body>
-  
-    <a-scene mindar-image="imageTargetSrc: https://authcode.biz/ar/audiosistema/targets_nuevos.mind; filterMinCF:0.1; filterBeta: 10;warmupTolerance: 1; autoStart: false;" color-space="sRGB" renderer="colorManagement: false, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true">
-        <a-assets>
-          <video controls="true" id="video_11" src="https://authcode.biz/ar/audiosistema/videos/exa/11.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
-          <video controls="true" id="video_12" src="https://authcode.biz/ar/audiosistema/videos/exa/12.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
-          <video controls="true" id="video_13" src="https://authcode.biz/ar/audiosistema/videos/exa/13.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
-          <video controls="true" id="video_14" src="https://authcode.biz/ar/audiosistema/videos/exa/14.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
-          <video controls="true" id="video_15" src="https://authcode.biz/ar/audiosistema/videos/exa/15.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
-          <video controls="true" id="video_16" src="https://authcode.biz/ar/audiosistema/videos/exa/16.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
-          <video controls="true" id="video_17" src="https://authcode.biz/ar/audiosistema/videos/exa/17.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
-          <video controls="true" id="video_18" src="https://authcode.biz/ar/audiosistema/videos/exa/18.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
+    <!-- 
+      Etiqueta para Plano Ar
+     -->
+     <a-scene mindar-image="imageTargetSrc: https://authcode.biz/ar/audiosistema/targets_nuevos.mind; filterMinCF:0.1; filterBeta: 10;warmupTolerance: 1; autoStart: false;" color-space="sRGB" renderer="colorManagement: false, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true">
+      <!-- 
+        Declaramos los assets que vamos a utilizar dentro del plano ar
+       -->
+       <a-assets>
+         <video controls="true" id="video_11" src="https://authcode.biz/ar/audiosistema/videos/exa/11.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
+         <video controls="true" id="video_12" src="https://authcode.biz/ar/audiosistema/videos/exa/12.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
+         <video controls="true" id="video_13" src="https://authcode.biz/ar/audiosistema/videos/exa/13.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
+         <video controls="true" id="video_14" src="https://authcode.biz/ar/audiosistema/videos/exa/14.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
+         <video controls="true" id="video_15" src="https://authcode.biz/ar/audiosistema/videos/exa/15.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
+         <video controls="true" id="video_16" src="https://authcode.biz/ar/audiosistema/videos/exa/16.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
+         <video controls="true" id="video_17" src="https://authcode.biz/ar/audiosistema/videos/exa/17.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
+         <video controls="true" id="video_18" src="https://authcode.biz/ar/audiosistema/videos/exa/18.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
           <video controls="true" id="video_19" src="https://authcode.biz/ar/audiosistema/videos/exa/19.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
 
 
@@ -365,9 +411,15 @@
           <video controls="true" id="video_10" src="https://authcode.biz/ar/audiosistema/videos/power/10.mp4" crossorigin="anonymous" webkit-playsinline playsinline></video>
           <!-- <a-asset-item id="raccoonModel" src="./primer_video.gltf"></a-asset-item> -->
         </a-assets>
-
+        
+        <!-- 
+          Etiqueta para camara virtual ar
+         -->
         <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
+        <!-- 
+          Entidades de traqueo, targetIndex es el indice donde se encuentra el video en el comprimido de targets
+         -->
         <a-entity mindar-image-target="targetIndex: 0" id="obtj-1">
           <a-video src="#video_11" height="16" width="9" position="0 0 0" scale="0.15 0.15 1"> </a-video>
         </a-entity>
@@ -425,11 +477,22 @@
         <a-entity mindar-image-target="targetIndex: 18" id="obtj-19">
           <a-video src="#video_4" height="16" width="9" position="0 0 0" scale="0.15 0.15 1"> </a-video>
         </a-entity>
-
       </a-scene>
-      <span id="buttonstart" class="boton" oncopy="return false" oncut="return false">
+
+      <!-- 
+        Boton de play
+       -->
+       <span id="buttonstart" class="boton" oncopy="return false" oncut="return false">
         Presiona para Iniciar
       </span>
+      <!-- 
+        Boton de play
+       -->
+
+
+       <!-- 
+        Ventanas modal para videos en ios
+        -->
       <div class="modal-video" id="modal_video_01" style="display: none;">
         <h5>¡Dale play para reproducir!</h5>
         <video id="video_modal_01" src="https://authcode.biz/ar/audiosistema/videos/power/1.mp4" crossorigin="anonymous" webkit-playsinline playsinline controls="true"></video>
@@ -506,6 +569,9 @@
         <video id="video_modal_19" src="https://authcode.biz/ar/audiosistema/videos/power/19.mp4" crossorigin="anonymous" webkit-playsinline playsinline controls="true"></video>
       </div>
       
+      <!-- 
+        Incluimos Jquery
+       -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 </body>
 </html>
